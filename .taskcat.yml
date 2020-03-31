@@ -1,0 +1,22 @@
+project:
+  name: connect-integration-radish-choiceview
+  owner: quickstart@amazon.com
+  package_lambda: false
+  regions:
+  - us-east-1
+  s3_bucket: ''
+tests:
+  defaults:
+    parameters:
+      ChoiceViewClientId: $[taskcat_genpass_32A]
+      ChoiceViewClientSecret: $[taskcat_genpass_64S]
+      ChoiceViewServiceUrl: https://cvnet2.radishsystems.com/ivr/api/
+      QSS3BucketName: $[taskcat_autobucket]
+      QSS3KeyPrefix: connect-integration-radish-choiceview/
+      TwilioAccountSid: AC0123456789abcdef0123456789abcdef
+      TwilioAuthToken: 0123456789abcdef0123456789abcdef
+      TwilioPhoneNumber: '+17025551212'
+    regions:
+    - us-east-1
+    s3_bucket: ''
+    template: templates/choiceview-integration.template.yaml
